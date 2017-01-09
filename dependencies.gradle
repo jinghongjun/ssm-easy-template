@@ -1,0 +1,158 @@
+//versions
+ext.versions = [
+
+        //all libraries version
+        gretty                                                      :                       '1.2.4',
+
+        mysql_connector_java                                        :                       '5.1.36',
+
+        asciidoctorj_pdf                                            :                       '1.5.0-alpha.10.1',
+
+        rest_assured                                                :                       '2.9.0',
+
+        spring_webmvc                                               :                       '4.2.5.RELEASE',
+
+        spring_orm                                                  :                       '4.2.5.RELEASE',
+
+        spring_context_support                                      :                       '4.2.5.RELEASE',
+
+        mybatis                                                     :                       '3.4.0',
+
+        mybatis_spring                                              :                       '1.3.0',
+
+        mybatis_mapper                                              :                       '3.3.8',
+
+        pagehelper                                                  :                       '4.1.3',
+
+        shiro_spring                                                :                       '1.2.4',
+
+        shiro_web                                                   :                       '1.2.4',
+
+        tomcat_jdbc                                                 :                       '8.0.33',
+
+        mail                                                        :                       '1.4.7',
+
+        jackson_databind                                            :                       '2.7.3',
+
+        aspectjweaver                                               :                       '1.8.9',
+
+        commons_fileupload                                          :                       '1.3.1',
+
+        slf4j_log4j12                                               :                       '1.7.21',
+
+        jackson_dataformat_xml                                      :                       '2.7.3',
+
+        //swagger
+        springfox_swagger2                                          :                       '2.4.0',
+        springfox_swagger_ui                                        :                       '2.4.0',
+        springfox_staticdocs                                        :                       '2.4.0',
+
+        assertj_swagger                                             :                       '0.1.2',
+
+        //providedCompile
+        javax_servlet_api                                           :                       '3.1.0',
+
+        //testCompile
+        junit                                                       :                       '4.12',
+        spring_test                                                 :                       '4.2.5.RELEASE',
+        hamcrest_core                                               :                       '1.3',
+        mockito_core                                                :                       '1.10.19',
+        json_schema_validator                                       :                       '2.9.0',
+        spring_mock_mvc                                             :                       '2.9.0',
+        spring_restdocs_restassured                                 :                       '1.1.0.RC1',
+        spring_restdocs_mockmvc                                     :                       '1.1.0.RC1',
+        jackson_module_jsonSchema                                   :                       '2.4.0',
+
+        //mybatisGenerator
+        mybatis_generator_core                                      :                       '1.3.2',
+
+        //all plugin version
+        flyway_gradle_plugin                                        :                       '4.0',
+
+        swagger2markup_gradle_plugin                                :                       '0.9.2',
+
+        asciidoctor_gradle_plugin                                   :                       '1.5.3',
+
+]
+
+//libraries
+ext.libraries = [
+
+        gretty                                                      :                       'org.akhikhl.gretty:gretty:$version.gretty',
+
+        mysql_connector_java                                        :                       'mysql:mysql-connector-java:$version.mysql_connector_java',
+
+
+        asciidoctorj_pdf                                            :                       'org.asciidoctor:asciidoctorj-pdf:$version.asciidoctorj_pdf',
+
+        rest_assured                                                :                       'com.jayway.restassured:rest-assured:$version.rest_assured',
+
+        spring_webmvc                                               :                       'org.springframework:spring-webmvc:$version.spring_webmvc',
+
+        spring_orm                                                  :                       'org.springframework:spring-orm:$version.spring_orm',
+
+        spring_context_support                                      :                       'org.springframework:spring-context-support:$version.spring_context_support',
+
+        mybatis                                                     :                       'org.mybatis:mybatis:$version.mybatis',
+
+        mybatis_spring                                              :                       'org.mybatis:mybatis-spring:$version.mybatis_spring',
+
+        mybatis_mapper                                              :                       'tk.mybatis:mapper:$version.mybatis_mapper',
+
+        pagehelper                                                  :                       'com.github.pagehelper:pagehelper:$version.pagehelper',
+
+        shiro_spring                                                :                       'org.apache.shiro:shiro-spring:$version.shiro_spring',
+
+        shiro_web                                                   :                       'org.apache.shiro:shiro-web:$version.shiro_web',
+
+        tomcat_jdbc                                                 :                       'org.apache.tomcat:tomcat-jdbc:$version.tomcat_jdbc',
+
+        mail                                                        :                       'javax.mail:mail:$version.mail',
+
+        jackson_databind                                            :                       'com.fasterxml.jackson.core:jackson-databind:$version.jackson_databind',
+
+        aspectjweaver                                               :                       'org.aspectj:aspectjweaver:$version.aspectjweaver',
+
+        commons_fileupload                                          :                       'commons-fileupload:commons-fileupload:$version.commons_fileupload',
+
+        slf4j_log4j12                                               :                       'org.slf4j:slf4j-log4j12:$version.slf4j_log4j12',
+
+        jackson_dataformat_xml                                      :                       'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:$version.jackson_dataformat_xml',
+
+        //swagger
+        springfox_swagger2                                          :                       'io.springfox:springfox-swagger2:$version.springfox_swagger2',
+        springfox_swagger_ui                                        :                       'io.springfox:springfox-swagger-ui:$version.springfox_swagger_ui',
+        springfox_staticdocs                                        :                       'io.springfox:springfox-staticdocs:$version.springfox_staticdocs',
+
+        assertj_swagger                                             :                       'io.github.robwin:assertj-swagger:$version.assertj_swagger',
+
+        //providedCompile
+        javax_servlet_api                                           :                       'javax.servlet:javax.servlet-api:$version.javax_servlet_api',
+
+        //testCompile
+        junit                                                       :                       'junit:junit:$version.junit',
+        spring_test                                                 :                       'org.springframework:$version.spring_test',
+        hamcrest_core                                               :                       'org.hamcrest:hamcrest-core:$version.hamcrest_core',
+        mockito_core                                                :                       'org.mockito:mockito-core:$version.mockito_core',
+        json_schema_validator                                       :                       'com.jayway.restassured:json-schema-validator:$version.json_schema_validator',
+        spring_mock_mvc                                             :                       'com.jayway.restassured:spring-mock-mvc:$version_spring_mock_mvc',
+        spring_restdocs_restassured                                 :                       'org.springframework.restdocs:spring-restdocs-restassured:$version.spring_restdocs_restassured',
+        spring_restdocs_mockmvc                                     :                       'org.springframework.restdocs:spring-restdocs-mockmvc:$version.spring_restdocs_mockmvc',
+        jackson_module_jsonSchema                                   :                       'com.fasterxml.jackson.module:jackson-module-jsonSchema:$version.jackson_module_jsonSchema',
+
+        //mybatisGenerator
+        mybatis_generator_core                                      :                       'org.mybatis.generator:mybatis-generator-core:$version.mybatis_generator_core',
+
+]
+
+
+//plugins
+ext.gradlePlugins = [
+
+        flyway_gradle_plugin                                        :                       'org.flywaydb:flyway-gradle-plugin:$version.flyway_gradle_plugin',
+
+        swagger2markup_gradle_plugin                                :                       'io.github.robwin:swagger2markup-gradle-plugin:$version.swagger2markup_gradle_plugin',
+
+        asciidoctor_gradle_plugin                                   :                       'org.asciidoctor:asciidoctor-gradle-plugin:$version.asciidoctor_gradle_plugin',
+
+]
