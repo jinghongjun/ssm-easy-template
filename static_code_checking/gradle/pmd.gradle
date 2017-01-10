@@ -1,0 +1,13 @@
+plugins.apply('pmd')
+
+pmd {
+    toolVersion = '5.4.1'
+}
+
+task pmd(type: Pmd) {
+    ignoreFailures = false // Fail early.
+    ruleSetFiles = files("${project.rootDir}/static_code_checking/rule/pmd.xml")
+    ruleSets = []
+
+    source = fileTree('src/main/java')
+}

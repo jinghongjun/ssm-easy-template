@@ -1,5 +1,3 @@
-apply from: 'dependencies.gradle'
-
 apply plugin: 'war'
 apply plugin: 'idea'
 apply plugin: 'eclipse-wtp'
@@ -8,14 +6,15 @@ apply plugin: 'org.flywaydb.flyway'
 apply plugin: 'io.github.robwin.swagger2markup'
 apply plugin: 'org.asciidoctor.convert'
 
-version '2.0'
+apply from: 'dependencies.gradle'
 
-configurations {
-    mybatisGenerator
-}
+//apply from: './static_code_checking/gradle/checkstyle.gradle'
+//apply from: './static_code_checking/gradle/findbugs.gradle'
+//apply from: './static_code_checking/gradle/pmd.gradle'
 
-//配置插件仓库
 buildscript {
+
+    apply from: 'dependencies.gradle'
 
     repositories {
         mavenCentral()
@@ -24,18 +23,22 @@ buildscript {
 
     dependencies {
 
-        classpath 'libraries.gretty'
+        classpath libraries.gretty
 
-        classpath: 'libraries.mysql_connector_java'
+        classpath libraries.mysql_connector_java
 
-        classpath "gradlePlugins.flyway_gradle_plugin"
+        classpath gradlePlugins.flyway_gradle_plugin
 
         //swagger2markup
-        classpath 'gradlePlugins.swagger2markup_gradle_plugin'
-        classpath 'gradlePlugins.asciidoctor_gradle_plugin'
-        classpath 'libraries.asciidoctorj_pdf'
+        classpath gradlePlugins.swagger2markup_gradle_plugin
+        classpath gradlePlugins.asciidoctor_gradle_plugin
+        classpath libraries.asciidoctorj_pdf
     }
 
+}
+
+configurations {
+    mybatisGenerator
 }
 
 //gretty设置
@@ -142,45 +145,46 @@ dependencies {
     //maven仓库中心没有的jar，则放入libs目录下
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
-    providedCompile 'libraries.javax_servlet_api'
+    providedCompile libraries.javax_servlet_api
 
-    testCompile 'libraries.rest-assured'
-    testCompile 'libraries.junit'
-    testCompile 'libraries.spring_test'
-    testCompile 'libraries.hamcrest_core'
-    testCompile 'libraries.mockito_core'
-    testCompile 'libraries.json_schema_validator'
-    testCompile 'libraries.spring_mock_mvc'
-    testCompile "libraries.spring_restdocs_restassured"
-    testCompile 'libraries.spring_restdocs_mockmvc'
-    testCompile 'libraries.jackson_module_jsonSchema'
+    testCompile libraries.rest_assured
+    testCompile libraries.junit
+    testCompile libraries.spring_test
+    testCompile libraries.hamcrest_core
+    testCompile libraries.mockito_core
+    testCompile libraries.json_schema_validator
+    testCompile libraries.spring_mock_mvc
+    testCompile libraries.spring_restdocs_restassured
+    testCompile libraries.spring_restdocs_mockmvc
+    testCompile libraries.jackson_module_jsonSchema
 
-    compile 'libraries.spring-webmvc'
-    compile 'libraries.spring_orm'
-    compile 'libraries.spring_context_support'
-    compile 'libraries.mysql_connector_java'
-    compile 'libraries.mybatis'
-    compile 'libraries.mybatis_spring'
-    compile 'libraries.mybatis_mapper'
-    compile 'libraries.pagehelper'
-    compile 'libraries.shiro_spring'
-    compile 'libraries.shiro_web'
-    compile 'libraries.tomcat_jdbc'
-    compile 'libraries.mail'
-    compile 'libraries.jackson_databind'
-    compile 'libraries.aspectjweaver'
-    compile 'libraries.commons_fileupload'
-    compile 'libraries.slf4j_log4j12'
-    compile 'libraries.jackson_dataformat_xml'
+    compile libraries.spring_webmvc
+    compile libraries.spring_orm
+    compile libraries.spring_context_support
+    compile libraries.mysql_connector_java
+    compile libraries.mybatis
+    compile libraries.mybatis_spring
+    compile libraries.mybatis_mapper
+    compile libraries.pagehelper
+    compile libraries.shiro_spring
+    compile libraries.shiro_web
+    compile libraries.tomcat_jdbc
+    compile libraries.mail
+    compile libraries.jackson_databind
+    compile libraries.aspectjweaver
+    compile libraries.commons_fileupload
+    compile libraries.slf4j_log4j12
+    compile libraries.jackson_dataformat_xml
+
     //swagger
-    compile "libraries.springfox_swagger2"
-    compile 'libraries.springfox_swagger_ui'
-    compile 'libraries.springfox_staticdocs'
-    compile 'libraries.assertj_swagger'
+    compile libraries.springfox_swagger2
+    compile libraries.springfox_swagger_ui
+    compile libraries.springfox_staticdocs
+    compile libraries.assertj_swagger
 
-    mybatisGenerator 'libraries.mybatis_generator_core'
-    mybatisGenerator 'libraries.mysql_connector_java'
-    mybatisGenerator 'libraries.mybatis_mapper'
+    mybatisGenerator libraries.mybatis_generator_core
+    mybatisGenerator libraries.mysql_connector_java
+    mybatisGenerator libraries.mybatis_mapper
 
 }
 
@@ -224,7 +228,19 @@ task mybatisGenerate << {
 
         }
     }
+
 }
+
+allprojects {
+
+    version = versions.version_name
+
+    repositories {
+        jcenter()
+    }
+
+}
+
 
 
 
